@@ -1,0 +1,11 @@
+
+<form [formGroup]="demoForm" (ngSubmit)="onSubmit()">
+    <label for="title">Title:</label>
+    <input formControlName="title" type="text" placeholder="Enter title" required/>
+    <br>
+    <label for="content">Content:</label>
+    <input formControlName="content" type="text" placeholder="Enter content" required/>
+    <br>
+    <button type="submit" [disabled]="!demoForm.valid">Submit</button>
+    
+</form>
