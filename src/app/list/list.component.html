@@ -1,0 +1,32 @@
+<p>list works!</p>
+<div>
+    {{data}}
+</div>
+<table datatable [dtOptions]="idtOptions" class="table tbl-banner table-striped table-bordered dt-responsive"
+  id="bannerListing">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="banners?.length != 0">                                                 
+
+    <tr *ngFor="let banner of banners">
+      <td>{{banner._id}}</td>
+      <td>{{ banner.title  }}</td>
+      <td>{{banner.content}}</td>
+      <td>
+        <button class="btn btn-small btn-primary" [routerLink]="['/admin/banner/viewMore' , banner.id]">View
+          More</button>
+      </td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="banners?.length == 0">
+    <tr>
+      <td colspan="6" class="no-data-available">No Banners Available!</td>
+    </tr>
+  <tbody>
+</table>
