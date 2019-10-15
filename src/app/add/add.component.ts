@@ -33,6 +33,12 @@ export class AddComponent implements OnInit {
         console.log(this.demoForm.value);
         console.log(resp);
       })
+     
+  }
+  showData(){
+    this.apiService.getAllNoteData().subscribe(resp=>{
+      console.log("resp",resp);
+    });
   }
 
 }

@@ -14,13 +14,14 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getAllNoteData(){
-    this.http.get(this.baseUrl).pipe(
+   return this.http.get(this.baseUrl+"/noteslist").pipe(
       tap((resp: any) => {
-        if (resp.status === 'success') {
+        console.log(resp);
+        /* if (resp.status === 'success') {
             console.log('success', resp.message, '');
         } else if (resp.status === 'failed') {
           console.log('error', resp.message, '');
-        }
+        } */
     }),
     map((resp: any) => {
         return resp;
